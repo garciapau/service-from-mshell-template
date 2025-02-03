@@ -1,3 +1,6 @@
+[![Java Version Supported](https://badges.prod.aws.skyscnr.com/badge?type=static&text=Java&value=21&colour=%2344CC11)]()
+[![Powered by MShell](https://badges.prod.aws.skyscnr.com/badge?type=static&text=powered%20by&value=mshell&colour=%2300B2D6)](https://skyscanner.atlassian.net/l/cp/17g4epUL)
+
 # mshell-template
 PoC for cookiecutting services: Github Template + Github Action
 
