@@ -7,11 +7,6 @@ on:
   # manual trigger
   workflow_dispatch:
 
-env:
-  SOURCE_BRANCH: 'main'
-  SOURCE_REPOSITORY: 'garciapau/mshell-template'
-  ACTIONS_STEP_DEBUG: true
-
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
@@ -22,19 +17,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        if: github.repository != env.SOURCE_REPOSITORY
-        with:
-          ref: ${{ env.SOURCE_BRANCH }}
-          repository: ${{ env.SOURCE_REPOSITORY }}
 
       # Doc: https://github.com/marketplace/actions/actions-template-sync
       - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v2.5.0
-        if: github.repository != env.SOURCE_REPOSITORY
+        uses: AndreasAugustin/actions-template-sync@v2
         with:
-          source_repo_path: ${{ env.SOURCE_REPOSITORY }}
-          upstream_branch: ${{ env.SOURCE_BRANCH }}
-          pr_title: "[actions-template-sync] Upstream template update"
-          pr_commit_msg: "chore(template): upstream template update"
-          pr_labels: 'mshell-template-sync'
-          source_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          source_repo_path: "garciapau/mshell-template"
+          upstream_branch: "main"
