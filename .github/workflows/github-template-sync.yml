@@ -7,6 +7,9 @@ on:
   # manual trigger
   workflow_dispatch:
 
+env:
+  SOURCE_REPOSITORY: 'garciapau/mshell-template'
+
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
@@ -17,10 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        if: github.repository != env.SOURCE_REPOSITORY
 
       # Doc: https://github.com/marketplace/actions/actions-template-sync
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2
+        if: github.repository != env.SOURCE_REPOSITORY
         with:
           source_repo_path: "garciapau/mshell-template"
           upstream_branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
