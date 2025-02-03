@@ -28,7 +28,7 @@ jobs:
 
       # Doc: https://github.com/marketplace/actions/actions-template-sync
       - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v2
+        uses: AndreasAugustin/actions-template-sync@v2.5.0
         if: github.repository != env.SOURCE_REPOSITORY
         with:
           source_repo_path: ${{ env.SOURCE_REPOSITORY }}
@@ -37,3 +37,4 @@ jobs:
           pr_commit_msg: "chore(template): upstream template update"
           pr_labels: 'mshell-template-sync'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          actions_step_debug: true
