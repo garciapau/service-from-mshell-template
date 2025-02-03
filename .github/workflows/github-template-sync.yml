@@ -33,4 +33,6 @@ jobs:
           source_repo_path: "garciapau/mshell-template"
           upstream_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-π
+          pr_title: "[actions-template-sync] Upstream template update"
+          pr_commit_msg: "chore(template): upstream template update"
+          pr_labels: 'mshell-template-sync'
