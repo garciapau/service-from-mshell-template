@@ -4,6 +4,9 @@ on:
   # cronjob trigger
   schedule:
     - cron: "0 0 1 * *"
+  push:
+    branches:
+      - main
   # manual trigger
   workflow_dispatch:
 
@@ -24,9 +27,10 @@ jobs:
 
       # Doc: https://github.com/marketplace/actions/actions-template-sync
       - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v2
+        uses: AndreasAugustin/actions-template-sync@v2.5.0
         if: github.repository != env.SOURCE_REPOSITORY
         with:
           source_repo_path: "garciapau/mshell-template"
           upstream_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
+π
