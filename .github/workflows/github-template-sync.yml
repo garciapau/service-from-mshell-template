@@ -33,3 +33,4 @@ jobs:
           pr_title: "[actions-template-sync] Upstream template update"
           pr_commit_msg: "chore(template): upstream template update"
           pr_labels: 'mshell-template-sync'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
