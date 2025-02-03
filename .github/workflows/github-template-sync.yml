@@ -1,11 +1,11 @@
 name: mshell-template-sync
 
 on:
+  # cronjob trigger
+  schedule:
+    - cron: "0 0 1 * *"
   # manual trigger
   workflow_dispatch:
-  # cronjob trigger
-#  schedule:
-#    - cron: '0 * * * *'
 
 env:
   SOURCE_BRANCH: 'main'
@@ -14,6 +14,9 @@ env:
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout
