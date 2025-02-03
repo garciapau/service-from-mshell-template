@@ -4,9 +4,6 @@ on:
   # cronjob trigger
   schedule:
     - cron: "0 0 1 * *"
-  push:
-    branches:
-      - main
   # manual trigger
   workflow_dispatch:
 
@@ -40,4 +37,4 @@ jobs:
           pr_title: "[actions-template-sync] Upstream template update"
           pr_commit_msg: "chore(template): upstream template update"
           pr_labels: 'mshell-template-sync'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_gh_token: ${{ secrets.GITHUB_TOKEN }}
