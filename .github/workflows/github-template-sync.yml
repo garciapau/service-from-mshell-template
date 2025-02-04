@@ -30,7 +30,7 @@ jobs:
         with:
           source_repo_path: ${{ env.SOURCE_REPOSITORY }}
           upstream_branch: ${{ env.SOURCE_BRANCH }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_gh_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "[mshell-template-sync] Changes from the mshell-template"
           pr_commit_msg: "chore(template): Changes from the mshell-template"
           pr_labels: 'mshell-template-sync'
