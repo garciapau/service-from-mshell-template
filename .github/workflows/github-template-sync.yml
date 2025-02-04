@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         if: github.repository != env.SOURCE_REPOSITORY
 
-      # Doc: https://github.com/marketplace/actions/actions-template-sync
+      # GHA Doc: https://github.com/marketplace/actions/actions-template-sync
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2.5.0
         if: github.repository != env.SOURCE_REPOSITORY
